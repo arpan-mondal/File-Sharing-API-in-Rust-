@@ -69,3 +69,16 @@ curl http://localhost:8080/files/123
 - This would send a GET request to the /files/123 endpoint, and return the response body.
 
 - That's it! With these steps, you should be able to build a basic file sharing API in Rust using the actix-web framework. Of course, you can customize and expand on this code to fit your specific requirements.
+
+# Understand the code 
+- To begin, we set up a new Rust project and add the necessary dependencies actix-web and tokio. We then create the server using actix_web::HttpServer, defining our routes inside the closure passed to it.
+
+- The routes can be defined using the actix_web::web macro, which is used to handle incoming requests at specific endpoints. Each route is associated with a handler function that defines the logic for processing the request and generating a response.
+
+- In the case of a file sharing API, we would have route handlers for uploading and downloading files, as well as listing and deleting files. In each handler function, we would implement the logic to handle the request, such as reading or writing files to disk or a database.
+
+- We would also need to handle errors that may occur during request handling, such as invalid input or server errors. This can be done using the Result type and the actix_web::error module.
+
+- Finally, we can test our API using tools like curl or a web browser, sending requests to the defined endpoints and verifying the responses.
+
+- Overall, building a File Sharing API in Rust requires a good understanding of the language, web development, and file handling concepts. However, Rust's strong type system and memory safety guarantees can make it an ideal choice for building high-performance and reliable APIs.
